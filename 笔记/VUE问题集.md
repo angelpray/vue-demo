@@ -6,3 +6,8 @@
 2. v-text和v-html的区别？
 
 3. v-if和v-show的区别？
+
+4. new Vue({})中的this指的是什么？
+
+5. 什么是单向数据流？
+答： data =>>> view， data驱动view。

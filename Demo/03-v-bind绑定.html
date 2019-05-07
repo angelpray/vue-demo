@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+    .title {
+      color: red;
+    }
+    .active {
+      color: green;
+    }
+  </style>
   <script src="./js/vue.js"></script>
 </head>
 <body>
@@ -14,12 +22,22 @@
   <script>
     new Vue({
       el: "#app",
-      template: ``,
+      template: `
+        <div>
+          <p class='title' :class='{active: isActive}'>v-bind</p>
+          <button @click="changeColor">切换</button>
+        </div>
+      `,
       data() {
         return {
-
+          isActive: true
         }
-      }
+      },
+      methods: {
+        changeColor() {
+          this.isActive = !this.isActive;
+        }
+      },
     })
   </script>
 </body>
