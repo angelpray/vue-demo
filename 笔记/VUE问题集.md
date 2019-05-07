@@ -8,6 +8,19 @@
 3. v-if和v-show的区别？
 
 4. new Vue({})中的this指的是什么？
+答：this指向每一个Vue实例本身。
 
 5. 什么是单向数据流？
-答： data =>>> view， data驱动view。
+答： model =>>> view， model驱动view。注意，这是单向的，只能是data变化而导致view变化，但view变化，data不会变化。例子就是：v-bind。
+
+6.什么是双向数据绑定？
+答：model <<<=>>> view，相互影响，是双向的。例子就是：v-model。
+
+7. 如何理解MVVM模式？
+
+![MVVM](https://image-static.segmentfault.com/298/848/298848890-5cd1a04b24333_articlex)
+
+8. 如何理解MVC模式？
+
+9. MVC和MVVM的区别是什么？
+
