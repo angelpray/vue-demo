@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+
+  </div>
+  <script>
+
+    // 全局组件
+    Vue.component('Vbtn', {
+      template: `
+        <button>按钮</button>
+      `
+    })
+
+    // 局部组件： 声子 挂子 用子
+
+    let Vheader = {
+      template: `
+        <div class='head'>我是头部组件</div>
+      `
+    }
+
+    let Vaside = {
+      template: `
+        <div class='aside'>我是侧边栏组件</div>
+      `
+    }
+
+    let Vcontent = {
+      template: `
+        <div class='content'>
+          <ul>
+            <li v-for='(item,index) in posts'>
+              <h3>{{item.title}}</h3>
+              <h4>{{item.content}}</h4>
+            </li>
+          <ul>
+        </div>
+      `,
+      props: ['posts']
+    }
+
+    // 1. 声明局部组件
+    let App = {
+      template: `
+        <div class='main'>
+          <Vheader />
+          <Vaside />
+          <Vcontent :posts='posts'/>
+        </div>
+      `,
+      data() {
+        return {
+            posts: [
+              {id:1, title: 'post one', content: 'first ariticle'},
+              {id:2, title: 'post two', content: 'second ariticle'},
+              {id:3, title: 'post three', content: 'third ariticle'}
+            ]
+        }
+      },
+      components: {
+        Vheader,
+        Vaside,
+        Vcontent
+      }
+    }
+
+    new Vue({
+      el: "#app",
+      // 3. 使用组件
+      template: `<App></App>`,
+      data() {
+        return {
+        }
+      },
+      // 2. 挂载组件
+      components: {
+        App,
+      }
+    })
+  </script>
+</body>
+</html>

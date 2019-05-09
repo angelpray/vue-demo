@@ -15,12 +15,13 @@
 
 6.什么是双向数据绑定？
 答：model <<<=>>> view，相互影响，是双向的。例子就是：v-model。
+![](https://image-static.segmentfault.com/411/343/4113434341-5cd4339a9a8b5_articlex)
 
 7. 如何理解MVVM模式？
 
 ![MVVM](https://image-static.segmentfault.com/298/848/298848890-5cd1a04b24333_articlex)
 
-8. 如何理解MVC模式？
+8. 理解MVC模式？
 
 9. MVC和MVVM的区别是什么？
 
