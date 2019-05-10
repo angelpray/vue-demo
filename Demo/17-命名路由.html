@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+  <script src="../node_modules/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+  <div id="app">
+
+  </div>
+  <script>
+
+    Vue.use(VueRouter);
+
+    let Login = {
+      template: `
+        <div>
+          我是登录页面
+        </div>
+      `,
+    }
+    let Register = {
+      template: `
+        <div>
+          我是注册页面
+        </div>
+      `,
+    }
+
+    let router = new VueRouter({
+      routes: [
+        {
+          path: '/login',
+          name: 'login',
+          component: Login
+        },
+        {
+          path: '/register',
+          name: 'register',
+          component: Register
+        }
+      ]
+    });
+
+    let App = {
+      template: `
+        <div>
+          <router-link :to="{name: 'login'}">登录</router-link>
+          <router-link :to="{name: 'register'}">注册</router-link>
+
+          <router-view></router-view>
+        </div>
+      `,
+    }
+
+    new Vue({
+      el: "#app",
+      router,
+      template: `<App/>`,
+      data() {
+        return {
+
+        }
+      },
+      components: {
+        App
+      }
+    })
+  </script>
+</body>
+</html>
