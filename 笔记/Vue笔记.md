@@ -100,4 +100,21 @@
 
 ## 过滤器
 
-1. 过滤器的作用：对当前的数据添油加醋
+1. 过滤器的作用：对当前的数据添油加醋。
+
+2. 分为全局过滤器和局部过滤器。声明的方式和局部组件和全局组件类似。
+```js
+// 全局
+Vue.filter('myReverse', function(value，arg1) {
+  return value.split('').reverse().join('');
+})
+// 局部
+var app = {
+  filter: {
+    myReverse(value，arg1) {
+      return value.split('').reverse().join('');
+    }
+  }
+}
+```
+3. 使用方式：{{数据属性 | 过滤器的名字}}

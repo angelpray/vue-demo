@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <input type="text" name='' v-model='msg'>
+    <h3>{{msg}}</h3>
+    <button @click='stus[0].name="qaq"'></button>
+    <h4>{{stus[0].name}}</h4>
+  </div>
+  <script>
+    new Vue({
+      el: "#app",
+      template: ``,
+      data() {
+        return {
+          msg: '',
+          stus: [{name: 'zjr'}]
+        }
+      },
+      watch: {
+        msg(newV,oldV) {
+          if (newV === 'zjr') {
+            console.log(newV)
+          }
+        },
+        stus: {
+          deep: true, // 深度监视
+          handler(newV,oldV) {
+            console.log(newV[0].name);
+          }
+        }
+      },
+    })
+  </script>
+</body>
+</html>
