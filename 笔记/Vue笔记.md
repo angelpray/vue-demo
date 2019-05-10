@@ -131,4 +131,4 @@ deactivated
 beforeDestroy
 destroyed
 
-
+## 前端路由原理
