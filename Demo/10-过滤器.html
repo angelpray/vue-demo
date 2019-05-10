@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+
+  </div>
+  <script>
+
+    let App = {
+      data() {
+        return {
+          price: 0
+        }
+      },
+      template: `
+        <div>
+          <input type='number' name='price' v-model='price' />
+          <h3>{{price | myCurrentcy}}</h3>
+        </div>
+      `,
+      filters: {
+        myCurrentcy(value) {
+          return `¥ ${value}`;
+        }
+      }
+    }
+
+    new Vue({
+      el: "#app",
+      template: `<App/>`,
+      data() {
+        return {
+
+        }
+      },
+      components: {
+        App,
+      }
+    })
+  </script>
+</body>
+</html>
