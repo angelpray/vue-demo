@@ -29,3 +29,5 @@
 
 11. 如何监听复杂数据类型，比如object，array？
 深入监视
+
+12.watch和computed有什么区别？

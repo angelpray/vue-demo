@@ -117,4 +117,18 @@ var app = {
   }
 }
 ```
-3. 使用方式：{{数据属性 | 过滤器的名字}}
+3. 使用方式：{{数据属性 | 过滤器的名字}}, v-bind:属性="数据属性 | 过滤器的名字"
+
+## 组件的生命周期
+beforeCreate
+created
+beforeMount
+mounted
+beforeUpdate
+updated
+activated
+deactivated
+beforeDestroy
+destroyed
+
+
