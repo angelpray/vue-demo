@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <App ref="app"/>
+  </div>
+  <script>
+    let App = {
+      template: `
+        <div class='app'>
+          <button ref='btn'>点我</button>
+        </div>
+      `,
+      data() {
+        return {
+
+        }
+      },
+      mounted() {
+        // 如果在组件内部使用this.$refs.xxx，获取的就是原生js的DOM对象
+        console.log(this.$refs.btn.outerHTML)
+      },
+    }
+    new Vue({
+      el: "#app",
+      template: ``,
+      data() {
+        return {
+
+        }
+      },
+      components: {
+        App
+      },
+      // 如果是组件的ref，则获得的是一个组件对象
+      mounted() {
+        console.log(this.$refs.app)
+      }
+    })
+  </script>
+</body>
+</html>
