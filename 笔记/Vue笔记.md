@@ -105,7 +105,7 @@
 2. 分为全局过滤器和局部过滤器。声明的方式和局部组件和全局组件类似。
 ```js
 // 全局
-Vue.filter('myReverse', function(value，arg1) {
+Vue.filter('myReverse', function(value, arg1) {
   return value.split('').reverse().join('');
 })
 // 局部
@@ -144,3 +144,7 @@ destroyed
 1. 动态路由用于公共组件里面
 2. 嵌套组件用于组件的结构不一样
 3. 共同点，都包含children组件
+
+## 权限控制
+
+1. 路由元信息
