@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/angelpray/vue-demo#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "vue-router": "^3.0.6"
   }
 }
